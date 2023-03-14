@@ -52,6 +52,15 @@ $ nest g module users
 $ nest g service users
 ```
 
+Add `AuthModule` and `UsersModule` to the imports array of the AppModule.
+
+```typescript
+@Module({
+  imports: [AuthModule, UsersModule],
+})
+export class AppModule {}
+```typescript
+
 Replace the default contents of these generated files as shown below. For our sample app, the `UsersService` simply maintains a hard-coded in-memory list of users, and a find method to retrieve one by username. In a real app, this is where you'd build your user model and persistence layer, using your library of choice (e.g., TypeORM, Sequelize, Mongoose, etc.).
 
 ```typescript
